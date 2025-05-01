@@ -1,0 +1,140 @@
+// primary
+$green-500: hsl(158, 36%, 37%);
+$green-700: hsl(158, 42%, 18%);
+
+// neutral
+$black: hsl(212, 21%, 14%);
+$grey: hsl(228, 12%, 48%);
+$cream: hsl(30, 38%, 92%);
+$white: hsl(0, 0%, 100%);
+
+// -------- //
+
+// Typography
+$font-size: 14px;
+
+%normal-text {
+    color: $grey;
+    font-size: $font-size;
+    font-weight: 500;
+}
+
+%fraunces-text {
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body {
+    width: 100%;
+    height: 100vb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $cream;
+    font-size: $font-size;
+    font-family: "Montserrat", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    border-radius: 12px;
+    min-width: 320px;
+    max-width: 600px;
+    background-color: $white;
+}
+
+.text-container {
+    padding: 20px;
+
+    h1 {
+        @extend %fraunces-text;
+    }
+}
+
+.category {
+    @extend %normal-text;
+}
+
+.description {
+    @extend %normal-text;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.price-container{
+    display: flex;
+    align-items: center;
+    margin-top: -2em;
+    margin-bottom: -1em;
+
+    .reduced-price {
+        @extend %fraunces-text;
+        color: $green-500;
+        margin-right: 20px;
+    }
+
+    .original-price {
+        color: $grey;
+        text-decoration: line-through;
+    }
+}
+
+button {
+    @extend %normal-text;
+    font-weight: 700;
+    width: 100%;
+    border-radius: 12px;
+    height: 50px;
+    border: none;
+    background-color: $green-500;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        margin-left: 10px;
+    }
+}
+
+
+img {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+@media (min-width: 600px) {
+
+    img {
+        height: 100%;
+        width: 300px;
+        margin: 0;
+        padding: 0;
+        border-radius: 12px 0 0 12px;
+    }
+
+    .text-container {
+        padding: 20;
+    }
+    
+    .container {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+}
